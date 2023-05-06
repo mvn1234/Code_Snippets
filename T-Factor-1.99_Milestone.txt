@@ -1,0 +1,147 @@
+def findOdd(series):
+    strings=series
+    differences = []
+    for s in strings:
+        s_diff = [(ord(s[i+1]) - ord(s[i])) for i in range(len(s)-1)]
+        differences.append(tuple(s_diff))
+    
+    unique_tuples = set(differences)
+    odd_one_out_index = None
+    odd_one_out = None
+    
+    for i, t in enumerate(differences):
+        if t not in unique_tuples or differences.count(t) == 1:
+            odd_one_out_index = i
+            odd_one_out = t
+    return series[odd_one_out_index]
+
+
+Index.html
+
+<!DOCTYPE html>
+//write code here.
+
+<html>
+  <head>
+    <title>Environment Report</title>
+    <meta charset='UTF-8'>
+    <meta name ="description" content='It is formerly known as Madras and is the capital city of the Indian state of Tamil Nadu. The city is the fourth largest city of India. It was founded in 1661 by the British East India Company. The city is on the Coromandel Coast of the Bay of Bengal.'>
+    <meta name ="viewport" content ='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' href='./index.css'>
+
+  </head>
+  <body>
+    <h1>Pollution Details of States</h1>
+    <section>
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+        </div>
+        <div class="flip-card-front">
+          <img src="./images/chennai.png" alt="chennai" style="width: 500px; height: 300px">
+        </div>
+        <div class="flip-card-back">
+          <p><b>Chennai:</b> It is formerly known as Madras and is the capital city of the Indian state of Tamil Nadu. The city is the fourth largest city of India. It was founded in 1661 by the British East India Company. The city is on the Coromandel Coast of the Bay of Bengal.</p>          
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+        </div>
+        <div class="flip-card-front">
+          <img src="./images/banglore.png" alt="banglore"  style="width: 500px; height: 300px">
+        </div>
+        <div class="flip-card-back">
+          <p><b>Bangalore:</b> It is widely regarded as the Silicon Valley of India (or IT capital of India) because of its role as the nation's leading information technology (IT) exporter. Indian technological organisations are headquartered in the city.</p>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+        </div>
+        <div class="flip-card-front">
+          <img src="./images/delhi.png" alt="delhi" style="width: 500px; height: 300px">
+        </div>
+        <div class="flip-card-back">
+          <p><b>Delhi:</b> Delhi is a part of the National Capital Region, which has 12.5 million residents. The governance of Delhi is like that of a state in India. It has its own legislature, high court and a council of executive ministers.</p>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+        </div>
+        <div class="flip-card-front">
+          <img src="./images/hyderabad.png" alt="hyderabad" style="width: 500px; height: 300px">
+        </div>
+        <div class="flip-card-back">
+          <p><b>Hyberabad:</b> The people of Hyderabad are called Hyderabadis. Hyderabad was founded in 1591 AD by Sultan Muhammad Quli Qutb Shah on the banks of river Musi.</p>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+        </div>
+        <div class="flip-card-front">
+          <img src="./images/mumbai.png" alt="mumbai" style="width: 500px; height: 300px">
+        </div>
+        <div class="flip-card-back">
+          <p><b>Mumbai:</b> It was previously known as Bombay until 1996 and is a natural harbour on the west coast of India, and is the capital city of Maharashtra state. It is India's largest city, and one of the world's most populous cities. It is the financial capital of India and a global city.</p>
+        </div>
+      </div>
+
+    </section>
+    <object data="./medium.html" type="media type"></object>
+    <object data="./medium.html" type="media type"></object>
+    <object data="./high.html" type="media type"></object>
+    <object data="./low.html" type="media type"></object>
+    <object data="./high.html" type="media type"></object>
+  </body>
+</html>>
+
+
+
+Low.html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML Document</title>
+  </head>
+  <body>
+    <p>Air Pollution:<meter low="30" high="90" min="0" max="100" value="40">low</meter></p>
+    <p>Water Pollution:<meter low="30" high="90" min="0" max="100" value="50">low</meter></p>
+    <p>Land Pollution:<meter low="30" high="90" min="0" max="100" value="30">low</meter></p>
+  </body>
+</html>
+
+medium.html
+<!DOCTYPE html>
+<html>
+  <body>
+    <p>Air Pollution:<meter low="30" high="80" value="85" min="0" max="100">medium</meter></p>
+    <p>Water Pollution:<meter low="30" high="80" value="90" min="0" max="100">medium</meter></p>
+    <p>Land Pollution:<meter low="30" high="80" value="95" min="0" max="100">medium</meter></p>
+  </body>
+</html>
+
+
+
+def test_the_plot():
+    # import matplotlib.pyplot as plt
+    fig = plt.figure(figsize=(12, 6))
+    ax = fig.add_subplot(1, 1, 1)
+    t = [7, 14, 21, 28, 35]
+    d = [i * 6 for i in t]
+    ax = fig.add_subplot(111)
+    ax.plot(t, d, label='d = 6t')
+    ax.set_xlabel('Time (seconds)')
+    ax.set_ylabel('Distance (meters)')
+    ax.set_title('Time vs Distance covered')
+    ax.set_xlim([0, 40])
+    ax.set_ylim([0, 220])
+    ax.legend()
+    plt.show()
+
+    # Write your functionality below
+    return fig
+
+https://github.com/DharmendraDevaraj/FrescoPlay-Matplotlib-Handson/blob/master/FrescoPlay%20%20Data%20Visualisation%20with%20Matplotlib%20HANDSON.ipynb
